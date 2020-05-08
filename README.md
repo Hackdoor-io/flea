@@ -14,7 +14,10 @@ yarn add @hackdoor/flea
 
 # Exported Functions
 
-### href
+The list of **flea** exported functions:
+- [href](#href)
+
+## href
 
 ```typescript
 import { href } from "@hackdoor/flea";
