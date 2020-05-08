@@ -1,4 +1,3 @@
-import rewire from 'rewire'
 import Flea from '.'
 
 test('Testing Flea without any option', () => {

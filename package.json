@@ -1,7 +1,7 @@
 {
-  "name": "href-flea",
+  "name": "@hackdoor/flea",
   "version": "0.0.1",
-  "description": "Add 'target=\"_blank\"' to any markdown link after HTML compilation",
+  "description": "Markdown post compile utilities for both browser and server",
   "author": "Michele Riva <michele.riva@hackdoor.io>",
   "license": "GNU GPLv3",
   "main": "dist/href-flea.umd.js",
