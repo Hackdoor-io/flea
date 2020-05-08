@@ -16,6 +16,7 @@ yarn add @hackdoor/flea
 
 The list of **flea** exported functions:
 - [href](#href)
+- [readingTime](#readingTime)
 
 ## href
 
@@ -47,3 +48,18 @@ const result = replaceHrefs(myHTMLInput);
 | --------- | -------- | --------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
 | baseURL   | `false`  | `string`  | `""`          | the url to prevent for adding `target="_blank"`                                                                       |
 | internals | `false`  | `boolean` | `false`       | set to `true` if you want to apply `href` to internals links too (those starting with `/`, for instance: `/articles`) |
+
+## readingTime
+
+```typescript
+import { readingTime } from "@hackdoor/flea";
+const myHTMLInput = `
+  <div>
+    <p> some text bla bla bla </p>
+    <a href="https://www.google.com"> A link to Google </a> <br />
+    <a href="https://www.bing.com"> A link to Bing </a> <br />
+  </div>
+`;
+
+
+const readingInfo = readingTime({text: myHTMLInput})
