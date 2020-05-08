@@ -1,23 +1,25 @@
-An immutable, purely functional micro-library to add `target="_blanl"` to any link inside an HTML string. Works both on server and Node.js
+An immutable, purely functional, type-safe micro-library that exposes some nice utilities for markdown-compilation post processing on both client and server.
 
 # Installation
 
 You can install `flea` from `npm`:
 
 ```bash
-npm i -s flea
+npm i -s @hackdoor/flea
 ```
 
 ```bash
-yarn add flea
+yarn add @hackdoor/flea
 ```
 
-# Usage
+# Exported Functions
+
+### href
 
 ```typescript
-import Flea from "flea";
+import { href } from "@hackdoor/flea";
 
-const flea = Flea({ baseURL: "https://www.google.com" });
+const replaceHrefs = href({ baseURL: "https://www.google.com" });
 
 const myHTMLInput = `
   <div>
@@ -27,7 +29,7 @@ const myHTMLInput = `
   </div>
 `;
 
-const result = flea(myHTMLInput);
+const result = replaceHrefs(myHTMLInput);
 
 //  <div>
 //    <p> some text bla bla bla </p>
@@ -36,6 +38,9 @@ const result = flea(myHTMLInput);
 //  </div>
 ```
 
-# Options
+**Options**
 
-Flea currently supports two options:
+| name      | required | type      | default value | description                                                                                                           |
+| --------- | -------- | --------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| baseURL   | `false`  | `string`  | `""`          | the url to prevent for adding `target="_blank"`                                                                       |
+| internals | `false`  | `boolean` | `false`       | set to `true` if you want to apply `href` to internals links too (those starting with `/`, for instance: `/articles`) |
