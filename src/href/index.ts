@@ -38,15 +38,13 @@ const replaceRegex = (options: Options): RegExp =>
   options.baseURL || options.internal ? composeBaseURLRegex(options) : /<a\s+href=/gi
 
 /**
- * @function flea
- * @returns {Function}
- * @sign flea :: Options -> String -> String
+ * @function href
+ * @param {Options} options
+ * @sign href :: Options -> String -> String
  * @description returns a function which takes an HTML string as input,
  *              then adds `target="_blank"` to any link depending on the
  *              passed options object.
  */
 
-const flea = (options: Options) => (HTMLInput: string): string =>
+export default (options: Options) => (HTMLInput: string): string =>
   ('' + HTMLInput).replace(replaceRegex(options), '<a target="_blank" href=')
-
-export default flea
