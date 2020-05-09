@@ -19,9 +19,9 @@ const slugify = (text: string): string => {
   text = text.toLowerCase()
 
   // remove accents, swap à for a, ñ for n, etc...
-  var from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;'
-  var to = 'aaaaeeeeiiiioooouuuunc------'
-  for (var i = 0, l = from.length; i < l; i++) {
+  const from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;'
+  const to = 'aaaaeeeeiiiioooouuuunc------'
+  for (let i = 0, l = from.length; i < l; i++) {
     text = text.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
   }
 
