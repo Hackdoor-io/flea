@@ -27,6 +27,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {
+    "rootDir": "./",
     "transform": {
       ".(ts|tsx)": "ts-jest"
     },
@@ -39,7 +40,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/test/"
+      "/test/",
+      "/dist"
     ],
     "coverageThreshold": {
       "global": {
@@ -50,7 +52,7 @@
       }
     },
     "collectCoverageFrom": [
-      "src/*.{js,ts}"
+      "<rootDir>/src/**/*.{js,ts}"
     ]
   },
   "lint-staged": {

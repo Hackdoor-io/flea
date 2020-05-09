@@ -145,7 +145,7 @@ Believe it or not, it is way easier than you think!</p>
   | <span class="hljs-type">White</span>   =&gt; (inputTheme.colors.dark,  inputTheme.colors.white)
   | _       =&gt; (<span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
   };
-  
+
 <span class="hljs-keyword">let</span> getColor = (color: color, theme: theme): <span class="hljs-built_in">string</span> =&gt; {
   <span class="hljs-keyword">let</span> (color, background) = useColors(color, theme);
   {j|
@@ -240,7 +240,7 @@ Let's see how do they look:</p>
                 inputTheme.colors.dark,
                 inputTheme.colors.white
               ];
-    
+
   }
 }
 
@@ -252,7 +252,7 @@ Let's see how do they look:</p>
 <span class="hljs-keyword">export</span> {
   useColors ,
   getColor ,
-  
+
 }
 <span class="hljs-comment">/* No side effect */</span>
 </code></pre>
@@ -275,17 +275,17 @@ Let's see how do they look:</p>
 
 <span class="hljs-comment">// tslint:disable-next-line:interface-over-type-literal</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> textTheme = {
-  readonly primary: <span class="hljs-built_in">string</span>; 
-  readonly dark: <span class="hljs-built_in">string</span>; 
+  readonly primary: <span class="hljs-built_in">string</span>;
+  readonly dark: <span class="hljs-built_in">string</span>;
   readonly white: <span class="hljs-built_in">string</span>
 };
 
 <span class="hljs-comment">// tslint:disable-next-line:interface-over-type-literal</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> themeColors = {
-  readonly primary: <span class="hljs-built_in">string</span>; 
-  readonly dark: <span class="hljs-built_in">string</span>; 
-  readonly white: <span class="hljs-built_in">string</span>; 
-  readonly yellow: <span class="hljs-built_in">string</span>; 
+  readonly primary: <span class="hljs-built_in">string</span>;
+  readonly dark: <span class="hljs-built_in">string</span>;
+  readonly white: <span class="hljs-built_in">string</span>;
+  readonly yellow: <span class="hljs-built_in">string</span>;
   readonly red: <span class="hljs-built_in">string</span>
 };
 

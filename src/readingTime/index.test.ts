@@ -32,6 +32,21 @@ test('[readingTime] Testing long readingTime', () => {
   })
 })
 
+test('[readingTime], should return 0 when no text is passed', () => {
+  // Ignoring type checking here for testing purposes
+  // @ts-ignore
+  expect(readingTime({})).toEqual({
+    duration: 0,
+    imageTime: 0,
+    otherLanguageTime: 0,
+    otherLanguageTimeCharacters: 0,
+    roundedDuration: 0,
+    totalImages: 0,
+    totalWords: 0,
+    wordTime: 0
+  })
+})
+
 test('[stripTags] utility method', () => {
   const testString = '<div>Test String</div>'
   const outputString = 'Test String'
@@ -50,7 +65,10 @@ test('[imageCount] should be able to count image to be 2', () => {
 
 test('[imageReadTime] should be able return read time if count is greater than 10', () => {
   const testString = '<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>'
-  expect(imageReadTime(IMAGE_READ_TIME, IMAGE_TAGS, testString)).toEqual({ count: 11, time: 1.425 })
+  expect(imageReadTime(IMAGE_READ_TIME, IMAGE_TAGS, testString)).toEqual({
+    count: 11,
+    time: 1.425
+  })
 })
 
 test('[imageReadTime] should be able return read time if count is less than 10', () => {
