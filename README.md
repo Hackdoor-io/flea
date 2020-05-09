@@ -1,10 +1,9 @@
 # Flea
 
-| service   | status                                                                                                                                         |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Travis.ci | [![Build Status](https://travis-ci.com/Hackdoor-io/flea.svg?token=UzbWfqseXCKBLrGyqqtu&branch=master)](https://travis-ci.com/Hackdoor-io/flea) |
-| Codecov   | [![codecov](https://codecov.io/gh/Hackdoor-io/flea/branch/master/graph/badge.svg?token=4YQWKZPX68)](https://codecov.io/gh/Hackdoor-io/flea)    |
-| GitHub CI | ![Node.js CI](https://github.com/Hackdoor-io/flea/workflows/Node.js%20CI/badge.svg)                                                            |
+| service   | status                                                                                                                                      |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Codecov   | [![codecov](https://codecov.io/gh/Hackdoor-io/flea/branch/master/graph/badge.svg?token=4YQWKZPX68)](https://codecov.io/gh/Hackdoor-io/flea) |
+| GitHub CI | ![Node.js CI](https://github.com/Hackdoor-io/flea/workflows/Node.js%20CI/badge.svg)                                                         |
 
 An immutable, purely functional, type-safe micro-library that exposes some nice utilities for markdown-compilation post processing on both client and server.
 
