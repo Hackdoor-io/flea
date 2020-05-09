@@ -63,3 +63,34 @@ const myHTMLInput = `
 
 
 const readingInfo = readingTime({text: myHTMLInput})
+
+// {
+//   	duration: 0.0036363636363636364,
+// 		imageTime: 0,
+// 		otherLanguageTime: 0,
+// 		otherLanguageTimeCharacters: 0,
+// 		roundedDuration: 1,
+// 		totalImages: 0,
+// 		totalWords: 1,
+// 		wordTime: 0.0036363636363636364
+// }
+```
+
+**Options**
+
+
+| name                  | required | type            | default value        | description                                        |
+| --------------------- | -------- | --------------- | -------------------- | -------------------------------------------------- |
+| text                  | `true`   | `string`        | `""`                 | the text for calculate the reading time            |
+| customWordTime        | `false`  | `number`        | `275`                | number of words read per minute                    |
+| customImageTime       | `false`  | `number`        | `12`                 | maximum of seconds spent looking at an image       |
+| chineseKoreanReadTime | `false`  | `number`        | `500`                | number of chinese and korean words read per minute |
+| imageTags             | `false`  | `Array<String>` | `[ 'img', 'Image' ]` | list of tags to identify images                    |
+
+
+
+	text: string;
+	customWordTime?: number;
+	customImageTime?: number;
+	chineseKoreanReadTime?: number;
+	imageTags?: Array<String>;
