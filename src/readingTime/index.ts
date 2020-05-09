@@ -7,7 +7,7 @@ export type PropsDefinition = {
   customWordTime?: number
   customImageTime?: number
   chineseKoreanReadTime?: number
-  imageTags?: Array<String>
+  imageTags?: string[]
 }
 
 export type ResponseDefinition = {
@@ -27,7 +27,7 @@ export type ResponseDefinition = {
  * @returns {ResponseDefinition}
  */
 
-const readingTime = ({
+const readingTime: (props: PropsDefinition) => ResponseDefinition = ({
   text = '',
   customWordTime,
   customImageTime,
@@ -41,7 +41,8 @@ const readingTime = ({
     customWordTime,
     chineseKoreanReadTime
   )
-  const response: ResponseDefinition = {
+
+  return {
     wordTime,
     imageTime,
     otherLanguageTime,
@@ -51,7 +52,6 @@ const readingTime = ({
     totalImages: imageCount,
     otherLanguageTimeCharacters: characterCount
   }
-  return response
 }
 
 export default readingTime
