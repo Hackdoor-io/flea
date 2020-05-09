@@ -12,22 +12,19 @@ const headingRegex = (): RegExp =>
  * @returns {String}
  */
 const slugify = (text: string): string =>
-  ('' + text)
-    .replace(/^\s+|\s+$/g, '')
+  text
     .toLowerCase()
-    .replace(/<[^>]*>/gi, '')
-    .replace(/[àáâãäå]/gi, 'a')
-    .replace(/[èéëê]/gi, 'e')
-    .replace(/[ìíïî]/gi, 'i')
-    .replace(/[òóöô]/gi, 'o')
-    .replace(/[ùúüû]/gi, 'u')
-    .replace(/[ñ]/gi, 'n')
-    .replace(/[ç]/gi, 'c')
-    .replace(/[^a-z0-9 -]/gi, '')
-    .replace(/\s+/gi, '-')
-    .split('')
-    .map(char => char.replace(/[^\w]/i, '-'))
-    .join('')
+    .replace(/^\s+|\s+$/g, '')
+    .replace(/<[^>]*>/g, '')
+    .replace(/[àáâãäå]/g, 'a')
+    .replace(/[èéëê]/g, 'e')
+    .replace(/[ìíïî]/g, 'i')
+    .replace(/[òóöô]/g, 'o')
+    .replace(/[ùúüû]/g, 'u')
+    .replace(/[ñ]/g, 'n')
+    .replace(/[ç]/g, 'c')
+    .replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
 
 /**
  * @function createAnchor
