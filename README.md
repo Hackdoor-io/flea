@@ -1,3 +1,11 @@
+# Flea
+
+| service   | status                                                                                                                                         |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Travis.ci | [![Build Status](https://travis-ci.com/Hackdoor-io/flea.svg?token=UzbWfqseXCKBLrGyqqtu&branch=master)](https://travis-ci.com/Hackdoor-io/flea) |
+| Codecov   | [![codecov](https://codecov.io/gh/Hackdoor-io/flea/branch/master/graph/badge.svg?token=4YQWKZPX68)](https://codecov.io/gh/Hackdoor-io/flea)    |
+| GitHub CI | ![.github/workflows/nodejs.yml](https://github.com/Hackdoor-io/flea/workflows/.github/workflows/nodejs.yml/badge.svg)                          |
+
 An immutable, purely functional, type-safe micro-library that exposes some nice utilities for markdown-compilation post processing on both client and server.
 
 # Installation
@@ -15,6 +23,7 @@ yarn add @hackdoor/flea
 # Exported Functions
 
 The list of **flea** exported functions:
+
 - [href](#href)
 - [readingTime](#readingTime)
 
@@ -61,29 +70,26 @@ const myHTMLInput = `
   </div>
 `;
 
-
-const readingInfo = readingTime({text: myHTMLInput})
+const readingInfo = readingTime({ text: myHTMLInput });
 
 // {
-//   	duration: 0.0036363636363636364,
-// 		imageTime: 0,
-// 		otherLanguageTime: 0,
-// 		otherLanguageTimeCharacters: 0,
-// 		roundedDuration: 1,
-// 		totalImages: 0,
-// 		totalWords: 1,
-// 		wordTime: 0.0036363636363636364
+//    duration: 0.0036363636363636364,
+//    imageTime: 0,
+//    otherLanguageTime: 0,
+//    otherLanguageTimeCharacters: 0,
+//    roundedDuration: 1,
+//    totalImages: 0,
+//    totalWords: 1,
+//    wordTime: 0.0036363636363636364
 // }
 ```
 
 **Options**
 
-
-| name                  | required | type            | default value        | description                                        |
-| --------------------- | -------- | --------------- | -------------------- | -------------------------------------------------- |
-| text                  | `true`   | `string`        | `""`                 | the text for calculate the reading time            |
-| customWordTime        | `false`  | `number`        | `275`                | number of words read per minute                    |
-| customImageTime       | `false`  | `number`        | `12`                 | maximum of seconds spent looking at an image       |
-| chineseKoreanReadTime | `false`  | `number`        | `500`                | number of chinese and korean words read per minute |
-| imageTags             | `false`  | `string[]`      | `[ 'img', 'Image' ]` | list of tags to identify images                    |
-
+| name                  | required | type       | default value        | description                                        |
+| --------------------- | -------- | ---------- | -------------------- | -------------------------------------------------- |
+| text                  | `true`   | `string`   | `""`                 | the text for calculate the reading time            |
+| customWordTime        | `false`  | `number`   | `275`                | number of words read per minute                    |
+| customImageTime       | `false`  | `number`   | `12`                 | maximum of seconds spent looking at an image       |
+| chineseKoreanReadTime | `false`  | `number`   | `500`                | number of chinese and korean words read per minute |
+| imageTags             | `false`  | `string[]` | `[ 'img', 'Image' ]` | list of tags to identify images                    |
