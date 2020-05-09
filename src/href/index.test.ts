@@ -12,7 +12,6 @@ test('Testing Flea without any option', () => {
 test('Testing Flea with baseURL option', () => {
   const replaceHrefs = href({ baseURL: 'https://www.google.com' })
   const HTMLInput = `<a href="https://www.google.com">A link to Google</a>`
-  replaceHrefs
   expect(replaceHrefs(HTMLInput)).toBe(`<a href="https://www.google.com">A link to Google</a>`)
 })
 
