@@ -12,7 +12,7 @@ const headingRegex = (): RegExp =>
  * @returns {String}
  */
 const slugify = (text: string): string =>
-  text
+  ('' + text)
     .replace(/^\s+|\s+$/g, '')
     .toLowerCase()
     .replace(/<[^>]*>/gi, '')
