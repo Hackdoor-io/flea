@@ -7,9 +7,9 @@ export const imageCount = (imageTags: string[] = IMAGE_TAGS, text: string) => {
   return (text.match(reg) || []).length
 }
 
-const getReadTimeTopImages = (count: number, customImageTime: number) =>
+export const getReadTimeTopImages = (count: number, customImageTime: number) =>
   (count / 2) * (customImageTime + 3) + (count - 10) * 3
-const getReadTimeOtherImages = (count: number, customImageTime: number) =>
+export const getReadTimeOtherImages = (count: number, customImageTime: number) =>
   (count / 2) * (2 * customImageTime + (1 - count))
 
 export const imageReadTime = (

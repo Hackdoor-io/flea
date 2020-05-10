@@ -1,6 +1,11 @@
 import readingTime from '.'
 import { stripTags, stripWhitespace } from './utils'
-import { imageReadTime, imageCount } from './utils/imageReadTime'
+import {
+  imageReadTime,
+  imageCount,
+  getReadTimeTopImages,
+  getReadTimeOtherImages
+} from './utils/imageReadTime'
 import { wordsCount, otherLanguageReadTime, wordsReadTime } from './utils/wordsReadTime'
 import { CHINESE_KOREAN_READ_TIME, IMAGE_READ_TIME, IMAGE_TAGS } from './constants'
 import longHtml from './__test__/longHtml'
@@ -71,9 +76,26 @@ test('[imageReadTime] should be able return read time if count is greater than 1
   })
 })
 
+test('[getReadTimeTopImages] calculate readting Time of top images', () => {
+  const testString = '<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>'
+  const count = imageCount(IMAGE_TAGS, testString)
+  expect(getReadTimeTopImages(count, IMAGE_READ_TIME)).toBe(85.5)
+})
+
+test('[getReadTimeOtherImages] calculate readting Time of other images', () => {
+  const testString = '<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>'
+  const count = imageCount(IMAGE_TAGS, testString)
+  expect(getReadTimeOtherImages(count, IMAGE_READ_TIME)).toBe(77)
+})
+
 test('[imageReadTime] should be able return read time if count is less than 10', () => {
   const testString = '<Image/><Image/><Image/>'
   expect(imageReadTime(IMAGE_READ_TIME, IMAGE_TAGS, testString)).toEqual({ count: 3, time: 0.55 })
+})
+
+test('[imageReadTime] should be able return read time if count is more than 10', () => {
+  const testString = '<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>'
+  expect(imageReadTime(IMAGE_READ_TIME, IMAGE_TAGS, testString)).toEqual({ count: 11, time: 1.425 })
 })
 
 test('[stripWhitespace] should be able strip leading or trailing whitespace from a string', () => {
@@ -109,5 +131,15 @@ test('[wordsReadTime] should be calculate words read time', () => {
     otherLanguageTime: 0,
     wordCount: 2,
     wordTime: 0.007272727272727273
+  })
+})
+
+test('[wordsReadTime] should be calculate words read time with custom readTime values', () => {
+  const testString = 'Test String'
+  expect(wordsReadTime(testString, 230, 110)).toEqual({
+    characterCount: 0,
+    otherLanguageTime: 0,
+    wordCount: 2,
+    wordTime: 0.008695652173913044
   })
 })
