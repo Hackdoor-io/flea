@@ -23,8 +23,40 @@ yarn add @hackdoor/flea
 
 The list of **flea** exported functions:
 
+- [anchors](#anchors)
 - [href](#href)
 - [readingTime](#readingTime)
+
+
+## anchors
+
+```typescript
+import { anchors } from "@hackdoor/anchors";
+
+const replaceAnchors = anchors();
+
+const myHTMLInput = `
+  <div>
+    <h1>Lorem Ipsum Dolor Sit Amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <h2>Consectetur Adipiscing Elit</h2>
+    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a...</p>
+    <h3>Sed Do Eiusmod Tempor Incididunt Ut</h3>
+    <p>Ut ullamcorper, ligula eu tempor congue, eros est euism...</p>
+  </div>
+  `;
+
+const result = replaceAnchors(myHTMLInput);
+
+//  <div>
+//    <h1><a href="#lorem-ipsum-dolor-sit-amet" class="h-anchor">#</a>Lorem Ipsum Dolor Sit Amet</h1>
+//    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+//    <h2><a href="#consectetur-adipiscing-elit" class="h-anchor">#</a>Consectetur Adipiscing Elit</h2>
+//    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a...</p>
+//    <h3><a href="#sed-do-eiusmod-tempor-incididunt-ut" class="h-anchor">#</a>Sed Do Eiusmod Tempor Incididunt Ut</h3>
+//    <p>Ut ullamcorper, ligula eu tempor congue, eros est euism...</p>
+//  </div>
+```
 
 ## href
 
@@ -56,6 +88,7 @@ const result = replaceHrefs(myHTMLInput);
 | --------- | -------- | --------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
 | baseURL   | `false`  | `string`  | `""`          | the url to prevent for adding `target="_blank"`                                                                       |
 | internals | `false`  | `boolean` | `false`       | set to `true` if you want to apply `href` to internals links too (those starting with `/`, for instance: `/articles`) |
+
 
 ## readingTime
 
