@@ -49,11 +49,20 @@ const myHTMLInput = `
 const result = replaceAnchors(myHTMLInput);
 
 //  <div>
-//    <h1><a href="#lorem-ipsum-dolor-sit-amet" class="h-anchor">#</a>Lorem Ipsum Dolor Sit Amet</h1>
+//    <h1>
+//      <a id="lorem-ipsum-dolor-sit-amet" href="#lorem-ipsum-dolor-sit-amet" class="h-anchor">#</a>
+//      Lorem Ipsum Dolor Sit Amet
+//    </h1>
 //    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-//    <h2><a href="#consectetur-adipiscing-elit" class="h-anchor">#</a>Consectetur Adipiscing Elit</h2>
+//    <h2>
+//      <a id="consectetur-adipiscing-elit" href="#consectetur-adipiscing-elit" class="h-anchor">#</a>
+//      Consectetur Adipiscing Elit
+//    </h2>
 //    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a...</p>
-//    <h3><a href="#sed-do-eiusmod-tempor-incididunt-ut" class="h-anchor">#</a>Sed Do Eiusmod Tempor Incididunt Ut</h3>
+//    <h3>
+//      <a id="sed-do-eiusmod-tempor-incididunt-ut" href="#sed-do-eiusmod-tempor-incididunt-ut" class="h-anchor">#</a>
+//      Sed Do Eiusmod Tempor Incididunt Ut
+//    </h3>
 //    <p>Ut ullamcorper, ligula eu tempor congue, eros est euism...</p>
 //  </div>
 ```
