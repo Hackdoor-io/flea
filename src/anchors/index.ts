@@ -28,11 +28,11 @@ const slugify = (text: string): string =>
 
 /**
  * @function createAnchor
- * @param {String} text
+ * @param {String} slug
  * @returns {String}
  */
-const createAnchor = (text: string): string =>
-  '<a href="#' + slugify(text) + '" class="h-anchor">#</a>'
+const createAnchor = (slug: string): string =>
+  `<a id="${slug}" href="#${slug}" class="h-anchor">#</a>`
 
 /**
  * @function anchors
@@ -42,5 +42,5 @@ const createAnchor = (text: string): string =>
  */
 export default () => (HTMLInput: string): string =>
   ('' + HTMLInput).replace(headingRegex(), heading => {
-    return createAnchor(heading) + heading
+    return createAnchor(slugify(heading)) + heading
   })
