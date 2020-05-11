@@ -1,12 +1,16 @@
 {
   "name": "@hackdoor/flea",
   "version": "0.0.1",
-  "description": "Markdown post compile utilities for both browser and server",
+  "description": "Markdown post-compilation utilities so tiny, they must be fleas!",
   "author": "Michele Riva <michele.riva@hackdoor.io>",
   "license": "GNU GPLv3",
-  "main": "dist/href-flea.umd.js",
-  "module": "dist/href-flea.es5.js",
-  "typings": "dist/types/href-flea.d.ts",
+  "main": "dist/flea.umd.js",
+  "module": "dist/flea.es5.js",
+  "typings": "dist/types/flea.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hackdoor-io/flea"
+  },
   "files": [
     "dist"
   ],
@@ -23,6 +27,7 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "changelog": "conventional-changelog -p flea -i CHANGELOG.md -s",
     "precommit": "lint-staged",
     "travis-deploy-once": "travis-deploy-once"
   },
