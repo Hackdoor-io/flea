@@ -1,6 +1,6 @@
 {
   "name": "@hackdoor/flea",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Markdown post-compilation utilities so tiny, they must be fleas!",
   "author": "Michele Riva <michele.riva@hackdoor.io>",
   "license": "GNU GPLv3",

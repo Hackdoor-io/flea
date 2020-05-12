@@ -1,3 +1,10 @@
+## <small>0.0.2 (2020-05-12)</small>
+
+* docs: readme updated ([714984b](https://github.com/Hackdoor-io/flea/commit/714984b))
+* fix(anchors): added id to anchors ([a2da93e](https://github.com/Hackdoor-io/flea/commit/a2da93e))
+
+
+
 ## <small>0.0.1 (2020-05-11)</small>
 
 * refactor(anchors): code review ([79428cf](https://github.com/Hackdoor-io/flea/commit/79428cf))
