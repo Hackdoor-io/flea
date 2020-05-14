@@ -1,10 +1,4 @@
-/**
- * @function headingRegex
- * @description Match text inside heading tags
- * @returns {RegExp}
- */
-const headingRegex = (): RegExp =>
-  new RegExp('(?<=(?!h(|1|2|3|4|5|6))>)(.+?)(?=</+?(?=h(|1|2|3|4|5|6)))', 'ig')
+import { parse, HTMLElement } from 'node-html-parser'
 
 /**
  * @function slugify
@@ -35,12 +29,27 @@ const createAnchor = (slug: string): string =>
   `<a id="${slug}" href="#${slug}" class="h-anchor">#</a>`
 
 /**
+ * @function prependAnchors
+ * @param {String} html
+ * @returns {String}
+ */
+const prependAnchors = (html: string): string => {
+  let root = parse(html)
+  const headings = ((root as unknown) as HTMLElement).querySelectorAll('h1,h2,h3,h4,h5,h6')
+
+  headings.map(el => {
+    el.set_content(`${createAnchor(slugify(el.rawText))}${el.innerHTML}`)
+  })
+
+  return root.toString()
+}
+
+/**
  * @function anchors
  * @description returns a function which takes an HTML string as input,
  *              then prepend `<a href="#my-anchor-name">#</a>` before any
  *              heading element such as h1, h2, h3, h4, h5 or h6.
  */
-export default () => (HTMLInput: string): string =>
-  ('' + HTMLInput).replace(headingRegex(), heading => {
-    return createAnchor(slugify(heading)) + heading
-  })
+export default () => (HTMLInput: string): string => {
+  return prependAnchors(HTMLInput)
+}
