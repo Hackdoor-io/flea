@@ -122,5 +122,8 @@
   },
   "resolutions": {
     "handlebars": "4.5.0"
+  },
+  "dependencies": {
+    "node-html-parser": "^1.2.16"
   }
 }

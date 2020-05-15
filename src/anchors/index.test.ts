@@ -33,3 +33,29 @@ test('Testing anchors with nested html tags', () => {
     <h2><a id="lorem-ipsum-dolor-sit-amet" href="#lorem-ipsum-dolor-sit-amet" class="h-anchor">#</a><i>Lorem Ipsum Dolor Sit Amet</i></h2>
   `)
 })
+
+test('Testing html with no headings', () => {
+  const replaceAnchors = anchors()
+  const HTMLInput = `
+    <strong>Testing html with no headings</strong>
+    <p>Lorem Ipsum Dolor Sit Amet lorem ipsum</p>
+    <p><i>Lorem Ipsum Dolor Sit Amet</i></p>
+  `
+
+  expect(replaceAnchors(HTMLInput)).toBe(`
+    <strong>Testing html with no headings</strong>
+    <p>Lorem Ipsum Dolor Sit Amet lorem ipsum</p>
+    <p><i>Lorem Ipsum Dolor Sit Amet</i></p>
+  `)
+})
+
+test('Testing simple string', () => {
+  const replaceAnchors = anchors()
+  const HTMLInput = `
+    this is a simple string with no html tags
+  `
+
+  expect(replaceAnchors(HTMLInput)).toBe(`
+    this is a simple string with no html tags
+  `)
+})
