@@ -59,3 +59,28 @@ test('Testing simple string', () => {
     this is a simple string with no html tags
   `)
 })
+
+test('Testing html with preformatted text', () => {
+  const replaceAnchors = anchors()
+  const HTMLInput = `
+    <h1>My heading title</h1>
+    <p>this is a simple paragraph</p>
+    <strong>lorem ipsum dolor sit amet</strong>
+    <pre>preformatted text</pre>
+    <h2>Another heading title</h2>
+    <p>another paragraph</p>
+    <pre><code>alert('hello world!')</code></pre>
+    <p>lorem ipsum dolor sit amet</p>
+  `
+
+  expect(replaceAnchors(HTMLInput)).toBe(`
+    <h1><a id="my-heading-title" href="#my-heading-title" class="h-anchor">#</a>My heading title</h1>
+    <p>this is a simple paragraph</p>
+    <strong>lorem ipsum dolor sit amet</strong>
+    <pre>preformatted text</pre>
+    <h2><a id="another-heading-title" href="#another-heading-title" class="h-anchor">#</a>Another heading title</h2>
+    <p>another paragraph</p>
+    <pre><code>alert('hello world!')</code></pre>
+    <p>lorem ipsum dolor sit amet</p>
+  `)
+})
