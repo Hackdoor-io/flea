@@ -34,10 +34,15 @@ const createAnchor = (slug: string): string =>
  * @returns {String}
  */
 const prependAnchors = (html: string): string => {
-  let root = parse(html)
-  const headings = ((root as unknown) as HTMLElement).querySelectorAll('h1,h2,h3,h4,h5,h6')
+  const root = parse(html) as HTMLElement
 
-  headings.map(el => {
+  if (!root.querySelectorAll) {
+    return ''
+  }
+
+  const headings = root.querySelectorAll('h1,h2,h3,h4,h5,h6')
+
+  headings.forEach(el => {
     el.set_content(`${createAnchor(slugify(el.rawText))}${el.innerHTML}`)
   })
 
