@@ -36,10 +36,6 @@ const createAnchor = (slug: string): string =>
 const prependAnchors = (html: string): string => {
   const root = parse(html) as HTMLElement
 
-  if (!root.querySelectorAll) {
-    return ''
-  }
-
   const headings = root.querySelectorAll('h1,h2,h3,h4,h5,h6')
 
   headings.forEach(el => {

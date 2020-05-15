@@ -48,3 +48,14 @@ test('Testing html with no headings', () => {
     <p><i>Lorem Ipsum Dolor Sit Amet</i></p>
   `)
 })
+
+test('Testing simple string', () => {
+  const replaceAnchors = anchors()
+  const HTMLInput = `
+    this is a simple string with no html tags
+  `
+
+  expect(replaceAnchors(HTMLInput)).toBe(`
+    this is a simple string with no html tags
+  `)
+})
