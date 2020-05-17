@@ -29,7 +29,8 @@
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "changelog": "conventional-changelog -p flea -i CHANGELOG.md -s",
     "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "release": "yarn changelog && yarn build && yarn publish"
   },
   "jest": {
     "rootDir": "./",
