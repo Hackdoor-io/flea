@@ -7,7 +7,7 @@
 
 
 
-## <small>0.0.2 (2020-05-17)</small>
+## <small>0.0.3 (2020-05-17)</small>
 
 * feat: Added 'yarn release' script ([d84a6de](https://github.com/Hackdoor-io/flea/commit/d84a6de))
 * fix(anchors): handle preformatted text ([7b571e2](https://github.com/Hackdoor-io/flea/commit/7b571e2)), closes [#11](https://github.com/Hackdoor-io/flea/issues/11)
