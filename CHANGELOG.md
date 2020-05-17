@@ -1,3 +1,12 @@
+## <small>0.0.4 (2020-05-17)</small>
+
+* ci: Updated package version ([0f379bd](https://github.com/Hackdoor-io/flea/commit/0f379bd))
+* chore: Updated TypeScript-related dependencies ([e83441e](https://github.com/Hackdoor-io/flea/commit/e83441e))
+* feat: Added 'yarn release' script ([d84a6de](https://github.com/Hackdoor-io/flea/commit/d84a6de))
+* fix(anchors): handle preformatted text ([7b571e2](https://github.com/Hackdoor-io/flea/commit/7b571e2)), closes [#11](https://github.com/Hackdoor-io/flea/issues/11)
+
+
+
 ## <small>0.0.2 (2020-05-17)</small>
 
 * feat: Added 'yarn release' script ([d84a6de](https://github.com/Hackdoor-io/flea/commit/d84a6de))
