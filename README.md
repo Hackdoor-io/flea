@@ -134,3 +134,6 @@ const readingInfo = readingTime({ text: myHTMLInput });
 | customImageTime       | `false`  | `number`   | `12`                 | maximum of seconds spent looking at an image       |
 | chineseKoreanReadTime | `false`  | `number`   | `500`                | number of chinese and korean words read per minute |
 | imageTags             | `false`  | `string[]` | `[ 'img', 'Image' ]` | list of tags to identify images                    |
+
+# License
+Flea is licensed under the [GPLv3](/LICENSE.md) license.
